@@ -2,7 +2,7 @@
   (:require [clojure.browser.repl :as repl]
             [goog.dom :as dom]
             [domina :as $]
-            [domina.events :as $e]))
+            [domina.events :as $ev]))
 
 (defonce conn
   (repl/connect "http://localhost:9000/repl"))
@@ -51,3 +51,25 @@
            (+ (/ 1 b))
            (/ 2)))
 (println "harmonic mean of 2 and 6:" (harmonic-mean 2 6))
+
+;; using domina, which is like jQuery
+(println "element with id of A:" $/by-id "A")
+(println "value of element with id of A:" ($/value ($/by-id "A")))
+(println "setting value of element with id of A to 42")
+($/set-value! ($/by-id "A") 42)
+(println "value of element with id of A:" ($/value ($/by-id "A")))
+
+;; DOM event handling
+(defn el-id->n [el-id]
+      (.parseFloat js/window ($/value ($/by-id el-id))))
+
+($ev/listen!
+  ($/by-id "calculate")
+  "click"
+  (fn [ev]
+      ($/set-text! ($/by-id "arithmetic")
+                   (arithmetic-mean (el-id->n "A") (el-id->n "B")))
+      ($/set-text! ($/by-id "geometric")
+                   (geometric-mean (el-id->n "A") (el-id->n "B")))
+      ($/set-text! ($/by-id "harmonic")
+                   (harmonic-mean (el-id->n "A") (el-id->n "B")))))
