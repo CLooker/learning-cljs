@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Discount Calculator</title>
+    <style type="text/css">
+        h1 {font-size: 125%}
+        h2 {font-size: 110%}
+        body {font-family: Helvetica, Arial, sans-serif}
+        td, th {
+            border: 1px solid gray
+        }
+        td.percent {
+            text-align: center;
+        }
+    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+
+<h1>Discount Calculator</h1>
+
+<table>
+    <thead>
+    <tr><th>Quantity</th><th>Discount</th></tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>0-10</td>
+        <td class="percent">0%</td>
+    </tr>
+    <tr>
+        <td>11-50</td>
+        <td class="percent">1%</td>
+    </tr>
+    <tr>
+        <td>51-100</td>
+        <td class="percent">3%</td>
+    </tr>
+    <tr>
+        <td>101-200</td>
+        <td class="percent">5%</td>
+    </tr>
+    <tr>
+        <td>201+</td>
+        <td class="percent">7.5%</td>
+    </tr>
+
+    </tbody>
+</table>
+
+<p>
+    <label>Quantity: <input type="text" id="qty" size="5"/></label><br />
+    <label>Unit Price: $<input type="text" id="price" size="5"/></label><br />
+    <label>Extra discount code: <input type="text" id="dcode" size="8"/></label> (gives you an extra 1% discount)
+</p>
+
+<p><input type="button" id="calculate" value="Calculate" /></p>
+
+<p>
+    Total price before discount: $<span id="total"></span><br />
+    Discount: $<span id="discount"></span><br />
+    After discount: $<span id="discounted"></span>
+</p>
+<script src="out/discount.js" type="text/javascript"></script>
+</body>
+</html>
