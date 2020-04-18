@@ -1,8 +1,9 @@
-(defproject conditionals "0.1.0-SNAPSHOT"
-  :description "Using conditionals"
-  :url "http://example.com/conditionals"
+(defproject seq_averages "0.1.0-SNAPSHOT"
+  :description "Calculate means of arbitrary number of items"
+  :url "http://example.com/seq_averages"
   :dependencies [[org.clojure/clojure "1.10.0"]
-                 [org.clojure/clojurescript "1.10.597"]]
+                 [org.clojure/clojurescript "1.10.597"]
+                 [domina "1.0.3"]]
   :jvm-opts ^:replace ["-Xmx1g" "-server"]
   :node-dependencies [[source-map-support "0.2.8"]]
   :plugins [[lein-npm "0.4.0"]]
