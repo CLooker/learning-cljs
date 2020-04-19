@@ -56,12 +56,16 @@ ul {
   max-width: fit-content;
 }
 
+#discount tr th {
+  padding: 2px;
+}
+
 #discount td,
 #discount th {
   border: 1px solid gray;
 }
 
-#discount td.percent {
+#discount td {
   text-align: center;
 }
 
