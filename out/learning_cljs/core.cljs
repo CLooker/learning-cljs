@@ -1,0 +1,83 @@
+(ns learning-cljs.core
+  (:require [clojure.browser.repl :as repl]
+            [domina :as $]
+            [domina.events :as $ev]))
+;; global
+(defonce conn
+  (repl/connect "http://localhost:9000/repl"))
+
+(enable-console-print!)
+
+(defn el-id->n [el-id]
+  (.parseFloat js/window ($/value ($/by-id el-id))))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; averages
+(defn arithmetic-mean [a b]
+  (/ (+ a b) 2))
+
+(defn geometric-mean [a b] (.sqrt js/Math (* a b)))
+
+(defn harmonic-mean [a b]
+  (->> (/ 1 a)
+       (+ (/ 1 b))
+       (/ 2)))
+
+($ev/listen!
+ ($/by-id "averages-btn")
+ "click"
+ (fn [ev]
+   (let [a-n (el-id->n "A")
+         b-n (el-id->n "B")
+         invalid? (or (zero? a-n)
+                      (zero? b-n)
+                      (js/isNaN a-n)
+                      (js/isNaN b-n))]
+     (when-not invalid?
+       ($/set-text! ($/by-id "arithmetic")
+                    (arithmetic-mean a-n b-n))
+       ($/set-text! ($/by-id "geometric")
+                    (geometric-mean a-n b-n))
+       ($/set-text! ($/by-id "harmonic")
+                    (harmonic-mean a-n b-n))))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; discount
+(defn price [quantity unit-price]
+  (.toFixed (* quantity unit-price) 2))
+
+(defn discount-rate [quantity]
+  (cond
+    (<= quantity 10) 0
+    (<= 11 quantity 50) .01
+    (<= 51 quantity 100) .03
+    (<= 101 quantity 200) .05
+    (<= 201 quantity) .075))
+
+(defn discount [quantity unit-price]
+  (.toFixed (* (price quantity unit-price)
+               (discount-rate quantity))
+            2))
+
+($ev/listen!
+ ($/by-id "discount-btn")
+ "click"
+ (fn [ev]
+   (let [qty (el-id->n "qty")
+         pr (el-id->n "price")]
+     (when-not (or
+                (neg? qty)
+                (zero? qty)
+                (neg? pr)
+                (zero? pr)
+                (js/isNaN qty)
+                (js/isNaN pr))
+       (let [price-before-discount (price qty pr)
+             disc (discount qty pr)
+             price-after-discount (.toFixed (- price-before-discount disc) 2)]
+         (println "disc" disc)
+         ($/set-text! ($/by-id "total-val")
+                      price-before-discount)
+         ($/set-text! ($/by-id "discount-val")
+                      disc)
+         ($/set-text! ($/by-id "discounted-val")
+                      price-after-discount))))))
