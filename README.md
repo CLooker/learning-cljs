@@ -6,7 +6,7 @@ This is just [me messing around](https://clooker.github.io/learning-cljs/) with 
 
 I spend most of my extra brain cycles on learning about Clojure.
 
-I was motivated to make some basic projects to get a feel for ClojureScript.
+I watched the [Learning ClojureScript Udemy course](https://www.udemy.com/course/learning-clojurescript/), and it motivated me to solve the starter projects provided.
 
 ## Setup
 
