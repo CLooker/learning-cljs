@@ -1,7 +1,7 @@
 (defproject learning-cljs "0.1.0-SNAPSHOT"
   :description "Building a website using basic cljs"
   :url "http://github.com/learning-cljs"
-  :dependencies [[org.clojure/clojure "1.10.0"]
+  :dependencies [[org.clojure/clojure "1.9.0"]
                  [org.clojure/clojurescript "1.10.597"]
                  [domina "1.0.3"]]
   :jvm-opts ^:replace ["-Xmx1g" "-server"]

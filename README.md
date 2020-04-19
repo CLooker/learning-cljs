@@ -1,10 +1,11 @@
 # learning-cljs
 
-FIXME: Write a one-line description of your library/project.
+This is just me messing around with ClojureScript.
 
 ## Overview
 
-FIXME: Write a paragraph about the library/project and highlight its goals.
+I spend most of my extra brain cycles on learning about Clojure. I figured I could make some basic
+projects to get a feel for ClojureScript. 
 
 ## Setup
 

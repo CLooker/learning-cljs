@@ -1,8 +1,9 @@
+/* global */
 body {
-   display: flex;
-   flex-direction: column;
-   align-items: center
-   min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 400px;
 }
 
 body * {
@@ -27,4 +28,60 @@ ul {
 .header {
   text-align: center;
   margin-top: 10px;
+}
+
+/* averages */
+#averages #value-inputs {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#averages #value-inputs input {
+  margin: 5px;
+}
+
+#averages #means {
+  text-align: left;
+}
+
+/* discount */
+#discount table {
+  max-width: fit-content;
+}
+
+#discount td,
+#discount th {
+  border: 1px solid gray;
+}
+
+#discount td.percent {
+  text-align: center;
+}
+
+#discount #discount-els {
+  min-width: min-content;
+}
+
+#discount #discount-els #labels-and-values {
+  display: flex;
+}
+
+#discount #discount-els #labels-and-values #labels,
+#discount #discount-els #labels-and-values #values {
+  display: flex;
+  flex-direction: column;
+}
+
+#discount-els #labels-and-values #labels label {
+  margin-bottom: 2px;
+}
+
+#discount-els #discount-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+#discount-els #discount-btn-container #discount-btn {
+  margin: 5px 0 5px 0;
 }

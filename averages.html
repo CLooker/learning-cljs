@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Averages</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-  <h1 class="header">Averages</h1>
-  <hr/>
-  <br>
-  <br>
-  <main>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Averages</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body id="averages">
+    <h1 class="header">Averages</h1>
+    <br />
+    <br />
+    <main>
+      <p id="value-inputs">
+        <label>A: <input type="text" id="A" size="10" /></label>
+        <label>B: <input type="text" id="B" size="10" /></label>
+        <label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="button" value="Calculate" id="averages-btn" />
+        </label>
+      </p>
 
-  </main>
-</body>
+      <br />
+      <p id="means">
+        Arithmetic mean: <span id="arithmetic"></span>
+        <br />
+        Geometric mean: <span id="geometric"></span>
+        <br />
+        Harmonic mean: <span id="harmonic"></span>
+      </p>
+    </main>
+    <script src="out/learning_cljs.js" type="text/javascript"></script>
+  </body>
 </html>

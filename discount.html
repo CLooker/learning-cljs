@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Discount</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body id="discount">
+    <h1 class="header">Discount</h1>
+    <br />
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Quantity</th>
+            <th>Discount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0-10</td>
+            <td class="percent">0%</td>
+          </tr>
+          <tr>
+            <td>11-50</td>
+            <td class="percent">1%</td>
+          </tr>
+          <tr>
+            <td>51-100</td>
+            <td class="percent">3%</td>
+          </tr>
+          <tr>
+            <td>101-200</td>
+            <td class="percent">5%</td>
+          </tr>
+          <tr>
+            <td>201+</td>
+            <td class="percent">7.5%</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <div id="discount-els">
+        <div id="labels-and-values">
+          <div id="labels">
+            <label>Quantity:&nbsp;&nbsp;</label>
+            <label>Unit Price:&nbsp;&nbsp;</label>
+          </div>
+          <div id="values">
+            <input type="text" id="qty" size="5" />
+            <input type="text" id="price" size="5" />
+          </div>
+        </div>
+        <div id="discount-btn-container">
+          <input type="button" id="discount-btn" value="Calculate" />
+        </div>
+        <br />
+        Total price before discount: $<span id="total-val"></span>
+        <br />
+        Discount: $<span id="discount-val"></span> <br />
+        After discount: $<span id="discounted-val"></span>
+      </div>
+    </main>
+    <script src="out/learning_cljs.js" type="text/javascript"></script>
+  </body>
+</html>
