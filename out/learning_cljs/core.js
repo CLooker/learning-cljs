@@ -44,11 +44,11 @@ return isNaN(b_n);
 if(cljs.core.truth_(invalid_QMARK_)){
 return null;
 } else {
-domina.set_text_BANG_.call(null,domina.by_id.call(null,"arithmetic"),learning_cljs.core.arithmetic_mean.call(null,a_n,b_n));
+domina.set_text_BANG_.call(null,domina.by_id.call(null,"arithmetic"),learning_cljs.core.arithmetic_mean.call(null,a_n,b_n).toFixed((2)));
 
-domina.set_text_BANG_.call(null,domina.by_id.call(null,"geometric"),learning_cljs.core.geometric_mean.call(null,a_n,b_n));
+domina.set_text_BANG_.call(null,domina.by_id.call(null,"geometric"),learning_cljs.core.geometric_mean.call(null,a_n,b_n).toFixed((2)));
 
-return domina.set_text_BANG_.call(null,domina.by_id.call(null,"harmonic"),learning_cljs.core.harmonic_mean.call(null,a_n,b_n));
+return domina.set_text_BANG_.call(null,domina.by_id.call(null,"harmonic"),learning_cljs.core.harmonic_mean.call(null,a_n,b_n).toFixed((2)));
 }
 }));
 learning_cljs.core.price = (function learning_cljs$core$price(quantity,unit_price){

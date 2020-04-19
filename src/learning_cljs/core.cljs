@@ -2,6 +2,9 @@
   (:require [clojure.browser.repl :as repl]
             [domina :as $]
             [domina.events :as $ev]))
+
+;; TODO create own build script that places assets in /docs dir and use that dir on ghpages
+
 ;; global
 (defonce conn
   (repl/connect "http://localhost:9000/repl"))
@@ -34,11 +37,11 @@
                       (js/isNaN b-n))]
      (when-not invalid?
        ($/set-text! ($/by-id "arithmetic")
-                    (arithmetic-mean a-n b-n))
+                    (.toFixed (arithmetic-mean a-n b-n) 2))
        ($/set-text! ($/by-id "geometric")
-                    (geometric-mean a-n b-n))
+                    (.toFixed (geometric-mean a-n b-n) 2))
        ($/set-text! ($/by-id "harmonic")
-                    (harmonic-mean a-n b-n))))))
+                    (.toFixed (harmonic-mean a-n b-n) 2))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; discount
