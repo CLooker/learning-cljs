@@ -10,15 +10,18 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
     />
   </head>
-  <body>
-    <h1 class="header title">Learning ClojureScript</h1>
+  <body id="word-count">
+    <h1 class="header title">Word Count</h1>
     <main>
-      <ul>
-        <li><a href="averages.html">Averages</a></li>
-        <li><a href="discount.html">Discount</a></li>
-        <li><a href="payment.html">Payment</a></li>
-        <li><a href="word-count.html">Word Count</a></li>
-      </ul>
+      <p>
+        <textarea id="words" cols="50" rows="5"></textarea>
+      </p>
+      <input type="button" id="count-words-btn" value="Count" />
+      <br />
+      <table>
+        <thead></thead>
+        <tbody id="word-count-table-tbody"></tbody>
+      </table>
     </main>
     <script src="out/learning_cljs.js" type="text/javascript"></script>
   </body>

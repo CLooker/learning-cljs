@@ -1,8 +1,4 @@
 /* global */
-html {
-  overflow-y: hidden !important;
-}
-
 body {
   display: flex;
   flex-direction: column;
@@ -24,6 +20,23 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+table {
+  max-width: fit-content;
+}
+
+tr th {
+  padding: 2px;
+}
+
+td,
+th {
+  border: 1px solid gray;
+}
+
+td {
+  text-align: center;
 }
 
 ul {
@@ -56,22 +69,6 @@ ul {
 }
 
 /* discount */
-#discount table {
-  max-width: fit-content;
-}
-
-#discount tr th {
-  padding: 2px;
-}
-
-#discount td,
-#discount th {
-  border: 1px solid gray;
-}
-
-#discount td {
-  text-align: center;
-}
 
 #discount #discount-els {
   min-width: min-content;
@@ -113,4 +110,9 @@ ul {
 
 #payment main #payment-calculation-container {
   justify-content: initial;
+}
+
+/* word-count */
+#word-count td {
+  padding: 5px;
 }
