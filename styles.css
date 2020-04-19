@@ -91,3 +91,22 @@ ul {
 #discount-els #discount-btn-container #discount-btn {
   margin: 5px 0 5px 0;
 }
+
+/* payment */
+#payment main {
+  align-items: initial;
+}
+
+#payment main * {
+  display: flex;
+  justify-content: space-between;
+  margin: 1px;
+}
+
+#payment main #calculate-payment-btn-container {
+  justify-content: center;
+}
+
+#payment main #payment-calculation-container {
+  justify-content: initial;
+}

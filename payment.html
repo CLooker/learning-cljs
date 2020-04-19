@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Learning ClojureScript</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"
+    />
+  </head>
+  <body id="payment">
+    <h1 class="header title">Payment</h1>
+    <main>
+      <label>Principal:&nbsp;<input type="text" id="principal" /></label>
+      <label>APR%:<input type="text" id="apr" /></label>
+      <label>Years: <input type="text" id="years" /></label>
+      <p id="calculate-payment-btn-container">
+        <input type="button" id="calculate-payment-btn" value="Calculate" />
+      </p>
+      <br />
+      <p id="payment-calculation-container">
+        Monthly Payment:&nbsp;<span id="payment-calculation"></span>
+      </p>
+    </main>
+    <script src="out/learning_cljs.js" type="text/javascript"></script>
+  </body>
+</html>
