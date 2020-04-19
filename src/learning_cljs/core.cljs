@@ -14,6 +14,13 @@
 (defn el-id->n [el-id]
   (.parseFloat js/window ($/value ($/by-id el-id))))
 
+(defn m->sorted-by-val [m]
+  (into (sorted-map-by
+         (fn [k1 k2]
+           (compare [(get m k2) k2]
+                    [(get m k1) k1])))
+        m))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; averages
 (defn arithmetic-mean [a b]
@@ -103,15 +110,23 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; word count
+(defn s->trs [s]
+  (->> s
+       (re-seq #"\w+") ;; words
+       (frequencies)
+       (m->sorted-by-val) ;; sort by val
+       (reduce ;; table rows
+        (fn
+          [acc [k v]]
+          (str acc "<tr><td>" k "</td><td>" v "</td></tr>"))
+        "")))
 
 (defn count-words! [ev]
   ($/destroy-children! ($/by-id "word-count-table-tbody"))
   (->> "words"
        ($/by-id)
        ($/value)
-       (re-seq #"\w+")
-       (frequencies)
-       (reduce (fn [acc [k v]] (str acc "<tr><td>" k "</td><td>" v "</td></tr>")) "")
+       (s->trs)
        ($/append! ($/by-id "word-count-table-tbody"))))
 
 

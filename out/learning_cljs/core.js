@@ -12,6 +12,11 @@ cljs.core.enable_console_print_BANG_.call(null);
 learning_cljs.core.el_id__GT_n = (function learning_cljs$core$el_id__GT_n(el_id){
 return window.parseFloat(domina.value.call(null,domina.by_id.call(null,el_id)));
 });
+learning_cljs.core.m__GT_sorted_by_val = (function learning_cljs$core$m__GT_sorted_by_val(m){
+return cljs.core.into.call(null,cljs.core.sorted_map_by.call(null,(function (k1,k2){
+return cljs.core.compare.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.get.call(null,m,k2),k2], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.get.call(null,m,k1),k1], null));
+})),m);
+});
 learning_cljs.core.arithmetic_mean = (function learning_cljs$core$arithmetic_mean(a,b){
 return ((a + b) / (2));
 });
@@ -111,15 +116,18 @@ var valid_QMARK_ = cljs.core.every_QMARK_.call(null,cljs.core.pos_QMARK_,new clj
 return domina.set_text_BANG_.call(null,domina.by_id.call(null,"payment-calculation"),(((!(valid_QMARK_)))?"":["$",cljs.core.str.cljs$core$IFn$_invoke$arity$1(learning_cljs.core.payment.call(null,principal,apr,years).toFixed((2)))].join('')));
 });
 domina.events.listen_BANG_.call(null,domina.by_id.call(null,"calculate-payment-btn"),"click",learning_cljs.core.calculate_payment_BANG_);
+learning_cljs.core.s__GT_trs = (function learning_cljs$core$s__GT_trs(s){
+return cljs.core.reduce.call(null,(function (acc,p__851){
+var vec__852 = p__851;
+var k = cljs.core.nth.call(null,vec__852,(0),null);
+var v = cljs.core.nth.call(null,vec__852,(1),null);
+return [cljs.core.str.cljs$core$IFn$_invoke$arity$1(acc),"<tr><td>",cljs.core.str.cljs$core$IFn$_invoke$arity$1(k),"</td><td>",cljs.core.str.cljs$core$IFn$_invoke$arity$1(v),"</td></tr>"].join('');
+}),"",learning_cljs.core.m__GT_sorted_by_val.call(null,cljs.core.frequencies.call(null,cljs.core.re_seq.call(null,/\w+/,s))));
+});
 learning_cljs.core.count_words_BANG_ = (function learning_cljs$core$count_words_BANG_(ev){
 domina.destroy_children_BANG_.call(null,domina.by_id.call(null,"word-count-table-tbody"));
 
-return domina.append_BANG_.call(null,domina.by_id.call(null,"word-count-table-tbody"),cljs.core.reduce.call(null,(function (acc,p__701){
-var vec__702 = p__701;
-var k = cljs.core.nth.call(null,vec__702,(0),null);
-var v = cljs.core.nth.call(null,vec__702,(1),null);
-return [cljs.core.str.cljs$core$IFn$_invoke$arity$1(acc),"<tr><td>",cljs.core.str.cljs$core$IFn$_invoke$arity$1(k),"</td><td>",cljs.core.str.cljs$core$IFn$_invoke$arity$1(v),"</td></tr>"].join('');
-}),"",cljs.core.frequencies.call(null,cljs.core.re_seq.call(null,/\w+/,domina.value.call(null,domina.by_id.call(null,"words"))))));
+return domina.append_BANG_.call(null,domina.by_id.call(null,"word-count-table-tbody"),learning_cljs.core.s__GT_trs.call(null,domina.value.call(null,domina.by_id.call(null,"words"))));
 });
 domina.events.listen_BANG_.call(null,domina.by_id.call(null,"count-words-btn"),"click",learning_cljs.core.count_words_BANG_);
 
