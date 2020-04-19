@@ -1,6 +1,6 @@
 # learning-cljs
 
-This is just me messing around with ClojureScript.
+This is just [me messing around](https://clooker.github.io/learning-cljs/) with ClojureScript.
 
 ## Overview
 
