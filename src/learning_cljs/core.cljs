@@ -113,7 +113,7 @@
 
 (defn s->trs [s]
   (->> s
-       (re-seq  #"([\w'-]+)") ;; regex for words
+       (re-seq  #"([\w'‘’-]+)") ;; regex for words
        (mapcat #(concat (rest %))) ;; take the matches
        (frequencies)
        (m->sorted-by-val) ;; sort by val
