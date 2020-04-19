@@ -100,3 +100,19 @@
                         (.toFixed (payment principal apr years) 2))))))
 
 ($ev/listen! ($/by-id "calculate-payment-btn") "click" calculate-payment!)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; word count
+
+(defn count-words! [ev]
+  ($/destroy-children! ($/by-id "word-count-table-tbody"))
+  (->> "words"
+       ($/by-id)
+       ($/value)
+       (re-seq #"\w+")
+       (frequencies)
+       (reduce (fn [acc [k v]] (str acc "<tr><td>" k "</td><td>" v "</td></tr>")) "")
+       ($/append! ($/by-id "word-count-table-tbody"))))
+
+
+($ev/listen! ($/by-id "count-words-btn") "click" count-words!)
