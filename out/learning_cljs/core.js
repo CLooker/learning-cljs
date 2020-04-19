@@ -83,46 +83,33 @@ return (learning_cljs.core.price.call(null,quantity,unit_price) * learning_cljs.
 domina.events.listen_BANG_.call(null,domina.by_id.call(null,"discount-btn"),"click",(function (ev){
 var qty = learning_cljs.core.el_id__GT_n.call(null,"qty");
 var pr = learning_cljs.core.el_id__GT_n.call(null,"price");
-if(cljs.core.truth_((function (){var or__4185__auto__ = (qty < (0));
-if(or__4185__auto__){
-return or__4185__auto__;
-} else {
-var or__4185__auto____$1 = (qty === (0));
-if(or__4185__auto____$1){
-return or__4185__auto____$1;
-} else {
-var or__4185__auto____$2 = (pr < (0));
-if(or__4185__auto____$2){
-return or__4185__auto____$2;
-} else {
-var or__4185__auto____$3 = (pr === (0));
-if(or__4185__auto____$3){
-return or__4185__auto____$3;
-} else {
-var or__4185__auto____$4 = isNaN(qty);
-if(cljs.core.truth_(or__4185__auto____$4)){
-return or__4185__auto____$4;
-} else {
-return isNaN(pr);
-}
-}
-}
-}
-}
-})())){
-return null;
-} else {
+var valid_QMARK_ = cljs.core.every_QMARK_.call(null,cljs.core.pos_QMARK_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [qty,pr], null));
+if(valid_QMARK_){
 var price_before_discount = learning_cljs.core.price.call(null,qty,pr);
 var disc = learning_cljs.core.discount.call(null,qty,pr);
 var price_after_discount = (price_before_discount - disc).toFixed((2));
-cljs.core.println.call(null,"disc",disc);
-
 domina.set_text_BANG_.call(null,domina.by_id.call(null,"total-val"),price_before_discount);
 
 domina.set_text_BANG_.call(null,domina.by_id.call(null,"discount-val"),disc);
 
 return domina.set_text_BANG_.call(null,domina.by_id.call(null,"discounted-val"),price_after_discount);
+} else {
+return null;
 }
 }));
+learning_cljs.core.payment = (function learning_cljs$core$payment(principal,apr,years){
+var r = (apr / ((12) * (100)));
+var n = ((12) * years);
+var rate_factor = Math.pow((r + (1)),n);
+return (((principal * r) * rate_factor) / (rate_factor - (1)));
+});
+learning_cljs.core.calculate_payment_BANG_ = (function learning_cljs$core$calculate_payment_BANG_(ev){
+var principal = learning_cljs.core.el_id__GT_n.call(null,"principal");
+var apr = learning_cljs.core.el_id__GT_n.call(null,"apr");
+var years = learning_cljs.core.el_id__GT_n.call(null,"years");
+var valid_QMARK_ = cljs.core.every_QMARK_.call(null,cljs.core.pos_QMARK_,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [principal,apr,years], null));
+return domina.set_text_BANG_.call(null,domina.by_id.call(null,"payment-calculation"),(((!(valid_QMARK_)))?"":["$",cljs.core.str.cljs$core$IFn$_invoke$arity$1(learning_cljs.core.payment.call(null,principal,apr,years).toFixed((2)))].join('')));
+});
+domina.events.listen_BANG_.call(null,domina.by_id.call(null,"calculate-payment-btn"),"click",learning_cljs.core.calculate_payment_BANG_);
 
 //# sourceMappingURL=core.js.map

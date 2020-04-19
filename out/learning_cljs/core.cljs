@@ -13,6 +13,7 @@
 
 (defn el-id->n [el-id]
   (.parseFloat js/window ($/value ($/by-id el-id))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; averages
 (defn arithmetic-mean [a b]
@@ -66,21 +67,36 @@
  "click"
  (fn [ev]
    (let [qty (el-id->n "qty")
-         pr (el-id->n "price")]
-     (when-not (or
-                (neg? qty)
-                (zero? qty)
-                (neg? pr)
-                (zero? pr)
-                (js/isNaN qty)
-                (js/isNaN pr))
+         pr (el-id->n "price")
+         valid? (every? pos? [qty pr])]
+     (when valid?
        (let [price-before-discount (price qty pr)
              disc (discount qty pr)
              price-after-discount (.toFixed (- price-before-discount disc) 2)]
-         (println "disc" disc)
          ($/set-text! ($/by-id "total-val")
                       price-before-discount)
          ($/set-text! ($/by-id "discount-val")
                       disc)
          ($/set-text! ($/by-id "discounted-val")
                       price-after-discount))))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; payment
+(defn payment [principal apr years]
+  (let [r (/ apr (* 12 100))
+        n (* 12 years)
+        rate-factor (.pow js/Math (inc r) n)]
+    (/ (* principal r rate-factor) (dec rate-factor))))
+
+(defn calculate-payment! [ev]
+  (let [principal (el-id->n "principal")
+        apr (el-id->n "apr")
+        years (el-id->n "years")
+        valid? (every? pos? [principal apr years])]
+    ($/set-text! ($/by-id "payment-calculation")
+                 (if (not valid?)
+                   ""
+                   (str "$"
+                        (.toFixed (payment principal apr years) 2))))))
+
+($ev/listen! ($/by-id "calculate-payment-btn") "click" calculate-payment!)
