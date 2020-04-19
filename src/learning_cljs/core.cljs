@@ -110,9 +110,11 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; word count
+;; ?=\S*['-])([a-zA-Z'-]+
 (defn s->trs [s]
   (->> s
-       (re-seq #"\w+") ;; words
+       (re-seq  #"([\w'-]+)") ;; regex for words
+       (mapcat #(concat (rest %))) ;; take the matches
        (frequencies)
        (m->sorted-by-val) ;; sort by val
        (reduce ;; table rows
