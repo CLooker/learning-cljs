@@ -75,17 +75,12 @@ ul {
 
 #discount #discount-els #labels-and-values {
   display: flex;
-}
-
-#discount #discount-els #labels-and-values #labels,
-#discount #discount-els #labels-and-values #values {
-  display: flex;
   flex-direction: column;
 }
 
-#discount-els #labels-and-values #labels label,
-#discount-els #labels-and-values #values input {
-  margin-bottom: 2px;
+#discount #discount-els #labels-and-values .label-and-value {
+  display: flex;
+  justify-content: center;
 }
 
 #discount-els #discount-btn-container {
