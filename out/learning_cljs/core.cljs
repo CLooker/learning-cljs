@@ -81,11 +81,11 @@
              disc (discount qty pr)
              price-after-discount (.toFixed (- price-before-discount disc) 2)]
          ($/set-text! ($/by-id "total-val")
-                      price-before-discount)
+                      (str "$"  price-before-discount))
          ($/set-text! ($/by-id "discount-val")
-                      disc)
+                      (str "$"  disc))
          ($/set-text! ($/by-id "discounted-val")
-                      price-after-discount))))))
+                      (str "$"  price-after-discount)))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; payment

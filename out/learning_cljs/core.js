@@ -93,11 +93,11 @@ if(valid_QMARK_){
 var price_before_discount = learning_cljs.core.price.call(null,qty,pr);
 var disc = learning_cljs.core.discount.call(null,qty,pr);
 var price_after_discount = (price_before_discount - disc).toFixed((2));
-domina.set_text_BANG_.call(null,domina.by_id.call(null,"total-val"),price_before_discount);
+domina.set_text_BANG_.call(null,domina.by_id.call(null,"total-val"),["$",cljs.core.str.cljs$core$IFn$_invoke$arity$1(price_before_discount)].join(''));
 
-domina.set_text_BANG_.call(null,domina.by_id.call(null,"discount-val"),disc);
+domina.set_text_BANG_.call(null,domina.by_id.call(null,"discount-val"),["$",cljs.core.str.cljs$core$IFn$_invoke$arity$1(disc)].join(''));
 
-return domina.set_text_BANG_.call(null,domina.by_id.call(null,"discounted-val"),price_after_discount);
+return domina.set_text_BANG_.call(null,domina.by_id.call(null,"discounted-val"),["$",cljs.core.str.cljs$core$IFn$_invoke$arity$1(price_after_discount)].join(''));
 } else {
 return null;
 }
@@ -117,10 +117,10 @@ return domina.set_text_BANG_.call(null,domina.by_id.call(null,"payment-calculati
 });
 domina.events.listen_BANG_.call(null,domina.by_id.call(null,"calculate-payment-btn"),"click",learning_cljs.core.calculate_payment_BANG_);
 learning_cljs.core.s__GT_trs = (function learning_cljs$core$s__GT_trs(s){
-return cljs.core.reduce.call(null,(function (acc,p__851){
-var vec__852 = p__851;
-var k = cljs.core.nth.call(null,vec__852,(0),null);
-var v = cljs.core.nth.call(null,vec__852,(1),null);
+return cljs.core.reduce.call(null,(function (acc,p__857){
+var vec__858 = p__857;
+var k = cljs.core.nth.call(null,vec__858,(0),null);
+var v = cljs.core.nth.call(null,vec__858,(1),null);
 return [cljs.core.str.cljs$core$IFn$_invoke$arity$1(acc),"<tr><td>",cljs.core.str.cljs$core$IFn$_invoke$arity$1(k),"</td><td>",cljs.core.str.cljs$core$IFn$_invoke$arity$1(v),"</td></tr>"].join('');
 }),"",learning_cljs.core.m__GT_sorted_by_val.call(null,cljs.core.frequencies.call(null,cljs.core.re_seq.call(null,/\w+/,s))));
 });

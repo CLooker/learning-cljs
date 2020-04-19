@@ -53,6 +53,7 @@ ul {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: max-content;
 }
 
 #averages #value-inputs input {
@@ -66,9 +67,13 @@ ul {
 
 #averages #means {
   text-align: left;
+  width: max-content;
 }
 
 /* discount */
+#discount td {
+  text-align: center;
+}
 
 #discount #discount-els {
   min-width: min-content;
@@ -82,15 +87,21 @@ ul {
 #discount #discount-els #labels-and-values .label-and-value {
   display: flex;
   justify-content: center;
+  margin: 2px;
 }
 
 #discount-els #discount-btn-container {
   display: flex;
   justify-content: center;
+  margin-top: 2px;
 }
 
 #discount-els #discount-btn-container #discount-btn {
   margin: 5px 0 5px 0;
+}
+
+#discount #discount-outputs {
+  width: max-content;
 }
 
 /* payment */
