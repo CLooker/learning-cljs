@@ -1,9 +1,8 @@
 (ns learning-cljs.core
   (:require [clojure.browser.repl :as repl]
             [domina :as $]
-            [domina.events :as $ev]))
-
-;; TODO create own build script that places assets in /docs dir and use that dir on ghpages
+            [domina.events :as $ev]
+            [learning-cljs.grayscale]))
 
 ;; global
 (defonce conn

@@ -104,6 +104,14 @@ ul {
   width: max-content;
 }
 
+/* grayscale */
+#grayscale div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* payment */
 #payment main {
   align-items: initial;

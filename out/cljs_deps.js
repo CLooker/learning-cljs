@@ -12,4 +12,14 @@ goog.addDependency("../clojure/browser/repl.js", ['clojure.browser.repl'], ['goo
 goog.addDependency("../domina/support.js", ['domina.support'], ['goog.dom', 'cljs.core', 'goog.events']);
 goog.addDependency("../domina.js", ['domina'], ['goog.dom.forms', 'goog.dom', 'goog.dom.classes', 'goog.string', 'cljs.core', 'domina.support', 'goog.style', 'clojure.string', 'goog.events', 'goog.dom.xml']);
 goog.addDependency("../domina/events.js", ['domina.events'], ['cljs.core', 'domina', 'goog.object', 'goog.events']);
-goog.addDependency("../learning_cljs/core.js", ['learning_cljs.core'], ['clojure.browser.repl', 'cljs.core', 'domina', 'domina.events']);
+goog.addDependency("../reagent/interop.js", ['reagent.interop'], ['cljs.core']);
+goog.addDependency("../reagent/debug.js", ['reagent.debug'], ['cljs.core']);
+goog.addDependency("../reagent/impl/util.js", ['reagent.impl.util'], ['reagent.interop', 'cljs.core', 'reagent.debug', 'clojure.string']);
+goog.addDependency("../reagent/ratom.js", ['reagent.ratom'], ['reagent.impl.util', 'cljs.core']);
+goog.addDependency("../cljsjs/development/react.inc.js", ['cljsjs.react'], [], {'foreign-lib': true});
+goog.addDependency("../reagent/impl/batching.js", ['reagent.impl.batching'], ['reagent.impl.util', 'reagent.interop', 'reagent.ratom', 'cljs.core', 'reagent.debug', 'clojure.string']);
+goog.addDependency("../reagent/impl/component.js", ['reagent.impl.component'], ['reagent.impl.util', 'reagent.interop', 'reagent.ratom', 'cljs.core', 'reagent.impl.batching', 'reagent.debug']);
+goog.addDependency("../reagent/impl/template.js", ['reagent.impl.template'], ['reagent.impl.util', 'reagent.interop', 'reagent.ratom', 'cljs.core', 'reagent.impl.batching', 'reagent.impl.component', 'reagent.debug', 'clojure.string']);
+goog.addDependency("../reagent/core.js", ['reagent.core'], ['reagent.impl.util', 'reagent.interop', 'reagent.ratom', 'cljs.core', 'cljsjs.react', 'reagent.impl.template', 'reagent.impl.batching', 'reagent.impl.component', 'reagent.debug']);
+goog.addDependency("../learning_cljs/grayscale.js", ['learning_cljs.grayscale'], ['reagent.core', 'clojure.browser.repl', 'cljs.core']);
+goog.addDependency("../learning_cljs/core.js", ['learning_cljs.core'], ['clojure.browser.repl', 'cljs.core', 'domina', 'domina.events', 'learning_cljs.grayscale']);
