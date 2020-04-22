@@ -9,8 +9,8 @@
 
 (defn in []
   [:input {:type "text"
-           :size "1"
            :value @gray
+           :style {:width "7vw"}
            :on-change (fn [ev]
                         (->> ev
                              .-target
