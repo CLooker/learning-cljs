@@ -118,13 +118,13 @@ return domina.set_text_BANG_.call(null,domina.by_id.call(null,"payment-calculati
 });
 domina.events.listen_BANG_.call(null,domina.by_id.call(null,"calculate-payment-btn"),"click",learning_cljs.core.calculate_payment_BANG_);
 learning_cljs.core.s__GT_trs = (function learning_cljs$core$s__GT_trs(s){
-return cljs.core.reduce.call(null,(function (acc,p__2618){
-var vec__2619 = p__2618;
-var k = cljs.core.nth.call(null,vec__2619,(0),null);
-var v = cljs.core.nth.call(null,vec__2619,(1),null);
+return cljs.core.reduce.call(null,(function (acc,p__606){
+var vec__607 = p__606;
+var k = cljs.core.nth.call(null,vec__607,(0),null);
+var v = cljs.core.nth.call(null,vec__607,(1),null);
 return [cljs.core.str.cljs$core$IFn$_invoke$arity$1(acc),"<tr><td>",cljs.core.str.cljs$core$IFn$_invoke$arity$1(k),"</td><td>",cljs.core.str.cljs$core$IFn$_invoke$arity$1(v),"</td></tr>"].join('');
-}),"",learning_cljs.core.m__GT_sorted_by_val.call(null,cljs.core.frequencies.call(null,cljs.core.mapcat.call(null,(function (p1__2617_SHARP_){
-return cljs.core.concat.call(null,cljs.core.rest.call(null,p1__2617_SHARP_));
+}),"",learning_cljs.core.m__GT_sorted_by_val.call(null,cljs.core.frequencies.call(null,cljs.core.mapcat.call(null,(function (p1__605_SHARP_){
+return cljs.core.concat.call(null,cljs.core.rest.call(null,p1__605_SHARP_));
 }),cljs.core.re_seq.call(null,/([\w'‘’-]+)/,s)))));
 });
 learning_cljs.core.count_words_BANG_ = (function learning_cljs$core$count_words_BANG_(ev){

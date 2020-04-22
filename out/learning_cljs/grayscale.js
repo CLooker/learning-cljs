@@ -12,17 +12,17 @@ return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMP
 });
 learning_cljs.grayscale.in$ = (function learning_cljs$grayscale$in(){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"input","input",556931961),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"type","type",1174270348),"text",new cljs.core.Keyword(null,"size","size",1098693007),"1",new cljs.core.Keyword(null,"value","value",305978217),cljs.core.deref.call(null,learning_cljs.grayscale.gray),new cljs.core.Keyword(null,"on-change","on-change",-732046149),(function (ev){
-return cljs.core.reset_BANG_.call(null,learning_cljs.grayscale.gray,(function (p1__2614_SHARP_){
-if(cljs.core.truth_(Number.isNaN(p1__2614_SHARP_))){
+return cljs.core.reset_BANG_.call(null,learning_cljs.grayscale.gray,(function (p1__587_SHARP_){
+if(cljs.core.truth_(Number.isNaN(p1__587_SHARP_))){
 return (0);
 } else {
-if((p1__2614_SHARP_ < (0))){
+if((p1__587_SHARP_ < (0))){
 return (0);
 } else {
-if((p1__2614_SHARP_ > (255))){
+if((p1__587_SHARP_ > (255))){
 return (255);
 } else {
-return p1__2614_SHARP_;
+return p1__587_SHARP_;
 
 }
 }
