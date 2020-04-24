@@ -4,7 +4,7 @@ goog.require('cljs.core');
 goog.require('reagent.core');
 goog.require('goog.color');
 learning_cljs.color_viewer.centered_cols_style = new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"display","display",242065432),"flex",new cljs.core.Keyword(null,"flex-direction","flex-direction",364609438),"column",new cljs.core.Keyword(null,"justify-content","justify-content",-1990475787),"center",new cljs.core.Keyword(null,"align-items","align-items",-267946462),"center"], null)], null);
-learning_cljs.color_viewer.input_width = new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"width","width",-384071477),"7vw"], null);
+learning_cljs.color_viewer.input_width = new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"width","width",-384071477),"7ch"], null);
 if((typeof learning_cljs !== 'undefined') && (typeof learning_cljs.color_viewer !== 'undefined') && (typeof learning_cljs.color_viewer.state !== 'undefined')){
 } else {
 learning_cljs.color_viewer.state = reagent.core.atom.call(null,new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"r","r",-471384190),(0),new cljs.core.Keyword(null,"g","g",1738089905),(0),new cljs.core.Keyword(null,"b","b",1482224470),(0),new cljs.core.Keyword(null,"hex","hex",41691346),"#000000"], null));

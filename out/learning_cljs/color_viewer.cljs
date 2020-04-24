@@ -7,7 +7,7 @@
                                   :justify-content "center"
                                   :align-items "center"}})
 
-(def input-width {:width "7vw"})
+(def input-width {:width "7ch"})
 
 (defonce state (atom {:r 0
                       :g 0
