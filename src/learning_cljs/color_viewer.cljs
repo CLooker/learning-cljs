@@ -62,7 +62,7 @@
 
 (defn out []
   [:div {:style {:height "40vh"
-                 :width "66vw"
+                 :width "50vw"
                  :margin-bottom "1.25em"
                  :border "1px solid black"
                  :background-color (@state :hex)}}])
