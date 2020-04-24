@@ -1,4 +1,9 @@
 /* global */
+html {
+  display: flex;
+  justify-content: center;
+}
+
 body {
   display: flex;
   flex-direction: column;
