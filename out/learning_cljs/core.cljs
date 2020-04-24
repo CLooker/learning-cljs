@@ -2,6 +2,7 @@
   (:require [clojure.browser.repl :as repl]
             [domina :as $]
             [domina.events :as $ev]
+            [learning-cljs.color-viewer]
             [learning-cljs.grayscale]))
 
 ;; global

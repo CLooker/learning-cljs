@@ -4,6 +4,7 @@ goog.require('cljs.core');
 goog.require('clojure.browser.repl');
 goog.require('domina');
 goog.require('domina.events');
+goog.require('learning_cljs.color_viewer');
 goog.require('learning_cljs.grayscale');
 if((typeof learning_cljs !== 'undefined') && (typeof learning_cljs.core !== 'undefined') && (typeof learning_cljs.core.conn !== 'undefined')){
 } else {
@@ -118,13 +119,13 @@ return domina.set_text_BANG_.call(null,domina.by_id.call(null,"payment-calculati
 });
 domina.events.listen_BANG_.call(null,domina.by_id.call(null,"calculate-payment-btn"),"click",learning_cljs.core.calculate_payment_BANG_);
 learning_cljs.core.s__GT_trs = (function learning_cljs$core$s__GT_trs(s){
-return cljs.core.reduce.call(null,(function (acc,p__636){
-var vec__637 = p__636;
-var k = cljs.core.nth.call(null,vec__637,(0),null);
-var v = cljs.core.nth.call(null,vec__637,(1),null);
+return cljs.core.reduce.call(null,(function (acc,p__2623){
+var vec__2624 = p__2623;
+var k = cljs.core.nth.call(null,vec__2624,(0),null);
+var v = cljs.core.nth.call(null,vec__2624,(1),null);
 return [cljs.core.str.cljs$core$IFn$_invoke$arity$1(acc),"<tr><td>",cljs.core.str.cljs$core$IFn$_invoke$arity$1(k),"</td><td>",cljs.core.str.cljs$core$IFn$_invoke$arity$1(v),"</td></tr>"].join('');
-}),"",learning_cljs.core.m__GT_sorted_by_val.call(null,cljs.core.frequencies.call(null,cljs.core.mapcat.call(null,(function (p1__635_SHARP_){
-return cljs.core.concat.call(null,cljs.core.rest.call(null,p1__635_SHARP_));
+}),"",learning_cljs.core.m__GT_sorted_by_val.call(null,cljs.core.frequencies.call(null,cljs.core.mapcat.call(null,(function (p1__2622_SHARP_){
+return cljs.core.concat.call(null,cljs.core.rest.call(null,p1__2622_SHARP_));
 }),cljs.core.re_seq.call(null,/([\w'‘’-]+)/,s)))));
 });
 learning_cljs.core.count_words_BANG_ = (function learning_cljs$core$count_words_BANG_(ev){

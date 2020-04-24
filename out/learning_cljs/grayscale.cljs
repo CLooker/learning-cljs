@@ -4,9 +4,6 @@
 
 (defonce gray (atom 0))
 
-(defn header []
-  [:h1.header.title "Grayscale"])
-
 (defn in []
   [:input {:type "text"
            :value @gray
