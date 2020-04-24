@@ -31,9 +31,9 @@
 (defn in-range [min max x]
   (cond
     (js/Number.isNaN x) min
-    (< x min max) min
-    (< min x max) x
-    (< min max x) max))
+    (<= x min max) min
+    (<= min x max) x
+    (<= min max x) max))
 
 (def in-rgb-range (partial in-range 0 255))
 

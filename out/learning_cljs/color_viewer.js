@@ -28,13 +28,13 @@ learning_cljs.color_viewer.in_range = (function learning_cljs$color_viewer$in_ra
 if(cljs.core.truth_(Number.isNaN(x))){
 return min;
 } else {
-if((((x < min)) && ((min < max)))){
+if((((x <= min)) && ((min <= max)))){
 return min;
 } else {
-if((((min < x)) && ((x < max)))){
+if((((min <= x)) && ((x <= max)))){
 return x;
 } else {
-if((((min < max)) && ((max < x)))){
+if((((min <= max)) && ((max <= x)))){
 return max;
 } else {
 return null;
@@ -59,7 +59,7 @@ learning_cljs.color_viewer.ins = (function learning_cljs$color_viewer$ins(){
 return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),learning_cljs.color_viewer.centered_cols_style,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"label","label",1718410804),"Hex: #"], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [learning_cljs.color_viewer.hex_in], null)], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"display","display",242065432),"flex",new cljs.core.Keyword(null,"align-items","align-items",-267946462),"baseline"], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"label","label",1718410804),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"margin-right","margin-right",809689658),"0.75em"], null)], null),"RGB: "], null),new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"display","display",242065432),"flex",new cljs.core.Keyword(null,"flex-direction","flex-direction",364609438),"column"], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [learning_cljs.color_viewer.rgb_in,new cljs.core.Keyword(null,"r","r",-471384190)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [learning_cljs.color_viewer.rgb_in,new cljs.core.Keyword(null,"g","g",1738089905)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [learning_cljs.color_viewer.rgb_in,new cljs.core.Keyword(null,"b","b",1482224470)], null)], null)], null)], null);
 });
 learning_cljs.color_viewer.out = (function learning_cljs$color_viewer$out(){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"height","height",1025178622),"40vh",new cljs.core.Keyword(null,"width","width",-384071477),"66vw",new cljs.core.Keyword(null,"margin-bottom","margin-bottom",388334941),"1.25em",new cljs.core.Keyword(null,"border","border",1444987323),"1px solid black",new cljs.core.Keyword(null,"background-color","background-color",570434026),cljs.core.deref.call(null,learning_cljs.color_viewer.state).call(null,new cljs.core.Keyword(null,"hex","hex",41691346))], null)], null)], null);
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"height","height",1025178622),"40vh",new cljs.core.Keyword(null,"width","width",-384071477),"50vw",new cljs.core.Keyword(null,"margin-bottom","margin-bottom",388334941),"1.25em",new cljs.core.Keyword(null,"border","border",1444987323),"1px solid black",new cljs.core.Keyword(null,"background-color","background-color",570434026),cljs.core.deref.call(null,learning_cljs.color_viewer.state).call(null,new cljs.core.Keyword(null,"hex","hex",41691346))], null)], null)], null);
 });
 learning_cljs.color_viewer.ui = (function learning_cljs$color_viewer$ui(){
 return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),learning_cljs.color_viewer.centered_cols_style,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [learning_cljs.color_viewer.out], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [learning_cljs.color_viewer.ins], null)], null);

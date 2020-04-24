@@ -31,9 +31,9 @@
 (defn in-range [min max x]
   (cond
     (js/Number.isNaN x) min
-    (< x min max) min
-    (< min x max) x
-    (< min max x) max))
+    (<= x min max) min
+    (<= min x max) x
+    (<= min max x) max))
 
 (def in-rgb-range (partial in-range 0 255))
 
@@ -62,7 +62,7 @@
 
 (defn out []
   [:div {:style {:height "40vh"
-                 :width "66vw"
+                 :width "50vw"
                  :margin-bottom "1.25em"
                  :border "1px solid black"
                  :background-color (@state :hex)}}])
